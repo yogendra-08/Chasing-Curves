@@ -1,55 +1,108 @@
-# 🚗 Chasing Curves
+# Dream Date Journey
 
-A high-speed car racing game where you dodge traffic and try to beat your high score!
+An interactive dating simulation game where you go on a virtual date with your crush. Experience different activities like a long drive, a walk in the park, dancing, shopping, and more!
 
-![Gameplay](https://via.placeholder.com/800x500/333333/ffffff?text=Chasing+Curves+Gameplay)
+## Features
 
-## 🎮 How to Play
+- 🚗 Interactive long drive scene with smooth car controls
+- 🌳 Beautifully animated park scene
+- 💃 Fun rhythm-based dance mini-game
+- 🛍️ Shopping experience with gift-giving mechanics
+- 🕉️ Peaceful temple visit with interactive elements
+- 🍽️ Cafe date with dialogue choices
+- 🌌 Romantic stargazing ending
+- 🎵 Immersive background music and sound effects
+- 🎨 Stunning visuals with smooth animations
+- 📱 Fully responsive design that works on desktop and mobile
 
-- **Arrow Keys** or **WASD** to control your car
-- Avoid colliding with other cars
-- The longer you survive, the higher your score
-- Game speed increases as you progress
-- Compete for the high score!
+## Technologies Used
 
-## 🚀 Features
+- HTML5 Canvas for rendering
+- JavaScript (ES6+) for game logic
+- TailwindCSS for UI components
+- GSAP for animations
+- Howler.js for audio management
+- Vite for development server and building
 
-- Smooth, responsive controls
-- Increasing difficulty
-- Local high score tracking
-- Modern UI with animations
-- Mobile touch controls
-- Engaging sound effects
+## Getting Started
 
-## 🛠️ Tech Stack
+### Prerequisites
 
-- **HTML5** - Game structure
-- **CSS3** - Styling and animations
-- **JavaScript** - Game logic
+- Node.js (v16 or higher)
+- npm or yarn
 
-## 🎛️ Controls
-
-- **← → / A D** - Move left and right
-- **↑ ↓ / W S** - Move up and down
-
-## 🚀 Quick Start
+### Installation
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/chasing-curves.git
-   cd chasing-curves
+   git clone https://github.com/yourusername/dream-date-journey.git
+   cd dream-date-journey
    ```
 
-2. Open `public/index.html` in your web browser
+2. Install dependencies:
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
 
-## 📱 Mobile Support
+3. Start the development server:
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
 
-Play directly in your mobile browser with touch controls!
+4. Open your browser and navigate to `http://localhost:3000`
 
-## 📝 License
+### Building for Production
 
-MIT License - See [LICENSE](LICENSE) for details.
+To create a production build:
 
----
+```bash
+npm run build
+# or
+yarn build
+```
 
-🏁 **Start your engines and happy racing!** 🏁
+The built files will be in the `dist` directory.
+
+## How to Play
+
+- Use arrow keys to move your character
+- Press SPACE to interact with objects and characters
+- Make dialogue choices to progress the story
+- Complete mini-games to increase your relationship level
+- Manage your energy and mood stats throughout the date
+
+## Project Structure
+
+```
+dream-date-journey/
+├── src/
+│   ├── js/
+│   │   ├── entities/       # Game entities (player, NPCs, etc.)
+│   │   ├── scenes/         # Game scenes (longDrive, park, etc.)
+│   │   ├── ui/             # UI components
+│   │   ├── utils/          # Utility functions and helpers
+│   │   └── game.js         # Main game class
+│   ├── scss/               # Styles
+│   └── assets/             # Game assets (images, audio, etc.)
+├── index.html              # Main HTML file
+├── package.json            # Project dependencies
+├── vite.config.js          # Vite configuration
+└── README.md               # This file
+```
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- Thanks to all the open-source libraries used in this project
+- Special thanks to the game development community for inspiration and resources

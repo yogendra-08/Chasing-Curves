@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <!-- Head -->
+  <circle cx="32" cy="20" r="12" fill="#FFD3B6" />
+  
+  <!-- Body -->
+  <rect x="24" y="32" width="16" height="24" rx="4" fill="#3498db" />
+  
+  <!-- Arms -->
+  <rect x="12" y="32" width="12" height="4" rx="2" fill="#3498db" />
+  <rect x="40" y="32" width="12" height="4" rx="2" fill="#3498db" />
+  
+  <!-- Legs -->
+  <rect x="24" y="56" width="6" height="12" rx="2" fill="#2c3e50" />
+  <rect x="34" y="56" width="6" height="12" rx="2" fill="#2c3e50" />
+  
+  <!-- Face -->
+  <circle cx="28" cy="16" r="2" fill="#2c3e50" />
+  <circle cx="36" cy="16" r="2" fill="#2c3e50" />
+  <path d="M28 22 Q32 26 36 22" stroke="#2c3e50" stroke-width="2" fill="none" />
+  
+  <!-- Hair -->
+  <path d="M20 18 Q32 5 44 18" stroke="#2c3e50" stroke-width="8" fill="none" stroke-linecap="round" />
+</svg>
