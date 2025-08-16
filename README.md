@@ -1,54 +1,55 @@
-# 🚗💨 Chasing Curves 😉
-*A flirty free-drive game made with HTML, CSS & JavaScript*  
+# 🚗 Chasing Curves
+
+A high-speed car racing game where you dodge traffic and try to beat your high score!
+
+![Gameplay](https://via.placeholder.com/800x500/333333/ffffff?text=Chasing+Curves+Gameplay)
+
+## 🎮 How to Play
+
+- **Arrow Keys** or **WASD** to control your car
+- Avoid colliding with other cars
+- The longer you survive, the higher your score
+- Game speed increases as you progress
+- Compete for the high score!
+
+## 🚀 Features
+
+- Smooth, responsive controls
+- Increasing difficulty
+- Local high score tracking
+- Modern UI with animations
+- Mobile touch controls
+- Engaging sound effects
+
+## 🛠️ Tech Stack
+
+- **HTML5** - Game structure
+- **CSS3** - Styling and animations
+- **JavaScript** - Game logic
+
+## 🎛️ Controls
+
+- **← → / A D** - Move left and right
+- **↑ ↓ / W S** - Move up and down
+
+## 🚀 Quick Start
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/chasing-curves.git
+   cd chasing-curves
+   ```
+
+2. Open `public/index.html` in your web browser
+
+## 📱 Mobile Support
+
+Play directly in your mobile browser with touch controls!
+
+## 📝 License
+
+MIT License - See [LICENSE](LICENSE) for details.
 
 ---
 
-## 🌟 About the Game  
-Welcome to **Chasing Curves 😉** — not just a driving game, but a *vibe*.  
-Forget racing, forget crashing — just **drive endlessly**, explore the road, and lose yourself in the curves.  
-
-💖 Smooth roads.  
-💋 Endless fun.  
-🔥 No finish line — just pure vibes.  
-
----
-
-## 🎮 Features  
-✨ **Endless Free Driving** – no crash, no game over.  
-✨ **Relax & Chill Mode** – your escape from chaos.  
-✨ **Smooth Controls** – arrow keys / WASD to glide.  
-✨ **Infinite Road Effect** – feel the thrill of endless motion.  
-✨ **Flirty Theme** – because why so serious? 😉  
-
----
-
-## 🕹️ Controls  
-- ⬅️ **Left Arrow / A** → Steer Left  
-- ➡️ **Right Arrow / D** → Steer Right  
-- ⬆️ **Up Arrow / W** → Accelerate  
-- ⬇️ **Down Arrow / S** → Brake / Slow  
-
----
-
-## 📸 Sneak Peek (Screenshots / GIFs)
-> _(Add screenshots or gameplay GIFs here when ready)_  
-Example:  
-![Gameplay Screenshot](assets/screenshot.png)
-
----
-
-## 🛠️ Tech Stack  
-- **HTML5** – structure of the game  
-- **CSS3** – styling & road effects  
-- **JavaScript (Canvas / DOM)** – game logic & animations  
-
----
-
-## 🚀 Getting Started  
-
-Clone the repo and run locally:  
-
-```bash
-git clone https://github.com/your-username/chasing-curves.git
-cd chasing-curves
-open index.html   # or run in live server
+🏁 **Start your engines and happy racing!** 🏁
