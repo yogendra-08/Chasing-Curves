@@ -1,0 +1,106 @@
+/* style.css - High-Level Styling for Chasing Curves Game */
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  background: linear-gradient(to top, #0b1d3a 0%, #87ceeb 100%);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+  user-select: none;
+}
+
+#gameCanvas {
+  display: block;
+  background-color: transparent;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.7);
+  border-radius: 12px;
+  image-rendering: optimizeSpeed; /* pixelated look for sprites if used */
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  -ms-interpolation-mode: nearest-neighbor;
+}
+
+#hud {
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: 700;
+  font-size: 1.25rem;
+  text-shadow: 0 0 12px rgba(0, 0, 0, 0.8);
+  pointer-events: none;
+  z-index: 10;
+  letter-spacing: 1px;
+}
+
+#startMenu {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(17, 17, 17, 0.85);
+  border-radius: 14px;
+  padding: 40px 60px;
+  text-align: center;
+  box-shadow: 0 0 40px rgba(255, 255, 255, 0.2);
+  z-index: 50;
+  user-select: none;
+}
+
+#startMenu h1 {
+  font-size: 3rem;
+  margin-bottom: 16px;
+  color: #ff4c4c;
+  text-shadow: 0 0 8px #ff1a1a;
+  font-family: 'Orbitron', sans-serif;
+}
+
+#startMenu p {
+  font-size: 1.2rem;
+  opacity: 0.8;
+}
+
+button {
+  margin-top: 20px;
+  background-color: #ff4c4c;
+  border: none;
+  padding: 12px 28px;
+  font-size: 1.2rem;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+button:hover {
+  background-color: #ff1a1a;
+}
+
+@media only screen and (max-width: 600px) {
+  #gameCanvas {
+    width: 100vw;
+    height: auto;
+    max-height: 90vh;
+  }
+
+  #hud {
+    font-size: 1rem;
+  }
+
+  #startMenu {
+    padding: 30px 20px;
+    width: 90vw;
+  }
+
+  #startMenu h1 {
+    font-size: 2rem;
+  }
+}

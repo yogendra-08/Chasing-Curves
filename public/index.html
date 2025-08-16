@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chasing Curves - Infinite Car Driving Game</title>
+  <link rel="stylesheet" href="src/css/style.css" />
+  <meta name="description" content="Chasing Curves is an endless car driving browser game featuring infinite road, parallax backgrounds, day-night cycles, curves, and chill vibes. Built with HTML, CSS, and JavaScript." />
+</head>
+<body>
+  <canvas id="gameCanvas" width="480" height="640" aria-label="Chasing Curves game canvas"></canvas>
+  <div id="hud">Speed: 0 km/h</div>
+
+  <!-- Main JS - loads game modules. Run via a local server for proper ES module support. -->
+  <script type="module">
+    import { runGame } from './src/js/main.js';
+    runGame();
+  </script>
+</body>
+</html>
