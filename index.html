@@ -4,14 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dream Date Journey</title>
-    <!-- TailwindCSS -->
+    <meta name="description" content="An interactive dating simulation game">
+    <link rel="stylesheet" href="/src/style.css">
+    <!-- External Libraries -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- GSAP for animations -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <!-- Howler.js for audio -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.4/howler.min.js"></script>
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="dist/style.css">
 </head>
 <body class="bg-gray-900 text-white overflow-hidden">
     <div id="game-container" class="relative w-full h-screen overflow-hidden">
@@ -70,12 +68,27 @@
         </div>
     </div>
 
+    <!-- Loading Screen -->
+    <div id="loading" class="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center text-white z-50">
+        <div class="text-center p-8 max-w-md">
+            <h1 class="text-4xl font-bold mb-6 text-pink-400">Dream Date Journey</h1>
+            <div class="text-xl mb-6">Loading your adventure...</div>
+            
+            <div class="w-full bg-gray-800 rounded-full h-3 mb-4 overflow-hidden">
+                <div id="loading-bar" class="h-full bg-pink-500 transition-all duration-300 ease-out" style="width: 0%"></div>
+            </div>
+            
+            <div id="loading-text" class="text-sm text-gray-400 mb-6">0%</div>
+            
+            <div id="loading-tip" class="text-sm text-gray-500 italic">
+                Tip: Make sure your volume is on for the full experience!
+            </div>
+            
+            <div id="error-message" class="text-red-400 mt-4 hidden"></div>
+        </div>
+    </div>
+    
     <!-- Game Scripts -->
-    <script src="src/js/game.js" type="module"></script>
-    <script src="src/js/scenes/sceneManager.js" type="module"></script>
-    <script src="src/js/entities/player.js" type="module"></script>
-    <script src="src/js/entities/girl.js" type="module"></script>
-    <script src="src/js/ui/dialog.js" type="module"></script>
-    <script src="src/js/utils/assets.js" type="module"></script>
+    <script type="module" src="/src/js/main.js"></script>
 </body>
 </html>

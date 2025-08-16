@@ -105,27 +105,27 @@ const assets = {
         'ui_mood': '/assets/ui/heart.svg'    // Using heart as placeholder
     },
     sounds: {
-        // Music - using placeholder sounds from free sources
+        // Music - using silent audio as fallback
         'bgm_driving': { 
-            path: 'https://assets.mixkit.co/music/preview/mixkit-driving-ambition-32.mp3', 
-            options: { loop: true, volume: 0.3 } 
+            path: '/assets/audio/sfx/silent.wav', 
+            options: { loop: true, volume: 0.0 } 
         },
         'bgm_park': { 
-            path: 'https://assets.mixkit.co/music/preview/mixkit-sunny-happy-32.mp3', 
-            options: { loop: true, volume: 0.3 } 
+            path: '/assets/audio/sfx/silent.wav', 
+            options: { loop: true, volume: 0.0 } 
         },
-        // Sound effects - using placeholder sounds from free sources
+        // Sound effects - using silent audio as fallback
         'sfx_click': { 
-            path: 'https://assets.mixkit.co/active_button/sounds/545/small_btn-2001.mp3', 
-            options: { volume: 0.5 } 
+            path: '/assets/audio/sfx/silent.wav', 
+            options: { volume: 0.0 } 
         },
         'sfx_success': { 
-            path: 'https://assets.mixkit.co/active_button/sounds/540/success-2001.mp3', 
-            options: { volume: 0.7 } 
+            path: '/assets/audio/sfx/silent.wav', 
+            options: { volume: 0.0 } 
         },
         'sfx_car': {
-            path: 'https://assets.mixkit.co/sound-effects/preview/mixkit-car-engine-on-idle-1380.mp3',
-            options: { volume: 0.4, loop: true }
+            path: '/assets/audio/sfx/silent.wav',
+            options: { volume: 0.0, loop: true }
         }
     }
 };
@@ -134,6 +134,14 @@ const assets = {
 async function loadAssets() {
     try {
         console.log('Loading assets...');
+        const loadingBar = document.getElementById('loading-bar');
+        const loadingText = document.getElementById('loading-text');
+        const errorMessage = document.getElementById('error-message');
+        
+        const updateProgress = (progress) => {
+            if (loadingBar) loadingBar.style.width = `${progress}%`;
+            if (loadingText) loadingText.textContent = `${Math.round(progress)}%`;
+        };
         
         // Count total assets to load
         assetLoader.totalAssets = 
@@ -141,9 +149,17 @@ async function loadAssets() {
             Object.keys(assets.sounds).length;
         
         // Load images
-        const imagePromises = [];
-        for (const [key, path] of Object.entries(assets.images)) {
-            imagePromises.push(assetLoader.loadImage(key, path));
+        const imageKeys = Object.keys(assets.images);
+        for (let i = 0; i < imageKeys.length; i++) {
+            const key = imageKeys[i];
+            try {
+                await assetLoader.loadImage(key, assets.images[key]);
+                updateProgress((i + 1) / (imageKeys.length + 1) * 100);
+                console.log(`Loaded image: ${key}`);
+            } catch (error) {
+                console.error(`Error loading image ${key}:`, error);
+                throw new Error(`Failed to load image: ${key}. Please check your internet connection and try again.`);
+            }
         }
         
         // Load sounds
@@ -153,13 +169,29 @@ async function loadAssets() {
         }
         
         // Wait for all assets to load
-        await Promise.all([...imagePromises, ...soundPromises]);
+        await Promise.all(soundPromises);
         
-        console.log('All assets loaded successfully!');
+        console.log('All assets loaded successfully');
+        updateProgress(100);
+        
+        // Hide loading screen after a short delay
+        setTimeout(() => {
+            const loadingScreen = document.getElementById('loading');
+            if (loadingScreen) {
+                loadingScreen.style.opacity = '0';
+                setTimeout(() => loadingScreen.style.display = 'none', 500);
+            }
+        }, 500);
+        
         return true;
     } catch (error) {
         console.error('Error loading assets:', error);
-        return false;
+        const errorMessage = document.getElementById('error-message');
+        if (errorMessage) {
+            errorMessage.textContent = `Error: ${error.message || 'Failed to load game assets'}`;
+            errorMessage.classList.remove('hidden');
+        }
+        throw error;
     }
 }
 

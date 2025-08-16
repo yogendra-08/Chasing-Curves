@@ -1,9 +1,13 @@
 import { defineConfig } from 'vite';
-import path from 'path';
+import { resolve } from 'path';
 
 export default defineConfig({
-  root: '.',
-  publicDir: 'public',
+  base: '/',
+  server: {
+    port: 3000,
+    open: true,
+    host: true,
+  },
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
@@ -11,7 +15,7 @@ export default defineConfig({
     sourcemap: true,
     rollupOptions: {
       input: {
-        main: path.resolve(__dirname, 'index.html'),
+        main: resolve(__dirname, 'index.html'),
       },
     },
   },
